@@ -14,11 +14,14 @@ const RegisterLogin = () => {
   const createAccount = async (name, email, password) => {
     try {
       // 1. Assign the resolved promise data directly to a variable
-      const res = await axios.post("http://localhost:3000/api/auth/register", {
-        name: name,
-        email: email,
-        password: password,
-      });
+      const res = await axios.post(
+        "https://registerloginsystem.onrender.com/api/auth/register",
+        {
+          name: name,
+          email: email,
+          password: password,
+        },
+      );
 
       console.log(res.data);
       navigate("/home");
@@ -32,10 +35,13 @@ const RegisterLogin = () => {
 
   const loginAccount = async (email, password) => {
     try {
-      const res = await axios.post("http://localhost:3000/api/auth/login", {
-        email: email,
-        password: password,
-      });
+      const res = await axios.post(
+        "https://registerloginsystem.onrender.com/api/auth/login",
+        {
+          email: email,
+          password: password,
+        },
+      );
 
       console.log(res.data);
       navigate("/home");
