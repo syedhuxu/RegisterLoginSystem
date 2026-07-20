@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins, sans-serif;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+body {
+  overflow: hidden;
+}
+a {
+  text-decoration: none;
+}
+
+.Hero-img {
+  height: 100vh;
+  width: 100vw;
+  object-fit: fill;
+}
+/* Base variables for easy customization */
+:root {
+  --primary-color: #4f46e5; /* Modern Indigo */
+  --primary-hover: #4338ca;
+  --bg-color: #f3f4f6; /* Soft light grey */
+  --card-bg: #ffffff;
+  --text-main: #1f2937; /* Dark slate */
+  --text-muted: #6b7280;
+  --border-color: #d1d5db;
+  --radius: 8px;
+  --shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Parent container layout */
+.parent {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 3rem 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-color);
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Individual Form Cards (Register & Login shares this) */
+.register,
+.login {
+  background: var(--card-bg);
+  padding: 2.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  flex: 1;
+  max-width: 420px;
+  width: 100%;
+}
+
+/* Flexbox layouts for the forms */
+.register form,
+.login form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Professional Form Section Titles (Optional Enhancement) */
+.register::before {
+  content: "Create an Account";
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 1.5rem;
+}
+
+.login::before {
+  content: "Welcome Back";
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 1.5rem;
+}
+
+/* Clean, modern input fields */
+.register input,
+.login input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  background-color: #fafafa;
+  color: var(--text-main);
+  transition: all 0.2s ease-in-out;
+  box-sizing: border-box;
+}
+
+/* Interactive focus ring for input fields */
+.register input:focus,
+.login input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+/* Call-to-action Action Buttons */
+.register button,
+.login button {
+  width: 100%;
+  padding: 0.85rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 0.5rem;
+}
+
+/* Interactive hover states for buttons */
+.register button:hover,
+.login button:hover {
+  background-color: var(--primary-hover);
+}
+
+.register button:active,
+.login button:active {
+  transform: scale(0.98);
+}
+
+/* 📱 Responsive viewports for smaller mobile phones */
+@media (max-width: 768px) {
+  .parent {
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    gap: 1.5rem;
+  }
+
+  .register,
+  .login {
+    max-width: 100%;
+    padding: 1.75rem;
+  }
+}
